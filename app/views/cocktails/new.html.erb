@@ -1,0 +1,14 @@
+<h1 class="header-content">Make your very own cocktail!</h1>
+<h2 class="header-content">Oh la la</h2>
+
+<% if @cocktail.errors.any? %>
+  <ul>
+    <% @cocktail.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'form', cocktail: @cocktail %>
+
+<%= link_to 'Back', cocktails_path %>

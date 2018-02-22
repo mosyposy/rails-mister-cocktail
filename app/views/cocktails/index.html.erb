@@ -1,0 +1,25 @@
+<div class="background" style="background-image: linear-gradient(rgba(230,230,230,0.3), rgba(250,250,250,0.2)), url(<%= image_path "cocktails.jpeg" %>)">
+  <h1 class="text-center header">List of all our cocktails!</h1>
+
+  <p id="notice"><%= notice %></p>
+
+
+  <div class="container">
+    <div class="cards">
+     <% @cocktails.each do |cocktail| %>
+       <div class="card">
+         <div class="card-body" style="background-image: url(<%= image_path "drink-image.png" %>)">
+           <span class="card-title"><%= cocktail.name %></span>
+           <div class="card-description">
+             <h2><%= link_to 'Show', cocktail %></h2>
+           </div>
+         </div>
+        </div>
+     <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="footer"><%= link_to 'New cocktail', new_cocktail_path %></div>
+</div>
